@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  
+  <title>  RAY OPTIC 2023 TO 2025</title>
+  <style>
+    @media (max-width: 768px) {
+
+  /* 🔹 Question & solution images fit mobile */
+  .question-media img,
+  .solution img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+}
+  
+   body {
+  font-family: Arial, sans-serif;
+  padding: 0;                 /* ✅ REMOVE SIDE AREA */
+  background-color: #a8a5a5;
+  color: #080707;
+}
+@media (max-width: 768px) {
+  #quizContainer {
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+    .question {
+      border: 1px solid #333;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      background-color: #f5f2f2;
+      display: none;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .question.active { display: block; }
+    .question-media { display: none; }
+    .options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .options label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 4px;
+      background-color: #2a2a2a;
+      color: #ccc;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .options label:hover {
+      background-color: #444;
+      transform: scale(1.02);
+    }
+    .options input[type="radio"] { margin: 0; }
+    .nav-button, .submit-button, .final-submit-button, .start-button, .toggle-button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: transform 0.2s ease;
+    }
+    .nav-button:hover, .submit-button:hover, .final-submit-button:hover,
+    .start-button:hover, .toggle-button:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+    .final-submit-button {
+      background-color: red;
+    }
+    .pause-active {
+      background-color: orange !important;
+    }
+    .back-button {
+      background-color: #8205f7;
+    }
+    .toggle-button {
+      background-color: #28a745;
+      display: none;
+    }
+    .toggle-button.video-btn {
+      background-color: #17a2b8;
+      display: none;
+    }
+    img, iframe.pdf {
+      max-width: 100%;
+      margin-top: 10px;
+      border: 1px solid #c3c3d4;
+    }
+    iframe.pdf {
+      height: 500px;
+    }
+    .solution, .video {
+      display: none;
+      margin-top: 10px;
+      background: #f0e9e9;
+      padding: 10px;
+      border-left: 4px solid #bcbcc4;
+    }
+    .timer {
+      margin-top: 10px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .score-section {
+      margin-top: 30px;
+      padding: 20px;
+      background: #fff;
+      border: 2px solid #007BFF;
+      border-radius: 9px;
+    }
+    .icon {
+      width: 18px;
+      height: 18px;
+    }
+    @media print {
+      .score-section table tr {
+        page-break-inside: avoid;
+      }
+    }
+ /* Password Overlay Styles */
+    #passwordOverlay {
+      position: fixed;
+      top: 0; left: 0; 
+      width: 100vw; height: 100vh;
+      background: linear-gradient(to right, #5e5555,#2b1515, #3b429c);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      z-index: 9999;
+    }
+    #passwordOverlay input {
+      padding: 10px;
+      font-size: 10px;
+      border: none;
+      border-radius: 5px;
+      margin: 10px;
+      outline: none;
+      width: 200px;
+    }
+    #passwordOverlay button {
+      padding: 10px 20px;
+      font-size: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+    .dont-know-button {
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #6c757d;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .dont-know-button:hover {
+      opacity: 0.9;
+      transform: scale(1.03);
+    }
+	/* 🔍 ENLARGE ONLY QUESTION & SOLUTION IMAGES */
+.question-media img,
+.solution img {
+  width: 100%;
+  max-width: none;        /* allow image to exceed container width */
+}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+
+<body>
+  <!-- PASSWORD PROTECTION -->
+  <div id="passwordOverlay">
+    <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width: 120px; height: auto; display: block; margin-bottom: 1px;">
+
+   
+   
+   
+   
+   
+   <h2>RAY OPTIC 2023 TO 2025</h2>
+
+ 
+ 
+ 
+ <h2>🔒 Enter Access Password</h2>
+    <input type="password" id="passwordInput" placeholder="Password" />
+    <button onclick="checkPassword()">Unlock</button>
+    <p id="errorMsg" style="color: red; margin-top: 10px;"></p>
+  </div>
+
+  <!-- MAIN QUIZ -->
+  <div id="mainContent" style="display:none">
+
+<!-- Instruction Section -->
+<div id="instructionsBox" style="
+  background:#f9fbfd;
+  padding:20px;
+  border-radius:12px;
+  margin:20px auto;
+  width:90%;
+  max-width:800px;
+  box-shadow:0 8px 16px rgba(0,0,0,0.1);
+  border-left:6px solid #4A90E2;
+  animation: fadeIn 0.8s ease-in-out;
+">
+  <h3 style="font-size:22px; color:#4A90E2; margin-bottom:15px;">📘 IMPORTANT INSTRUCTIONS</h3>
+  <ul style="line-height:1.8; font-size:16px; padding-left:20px; color:#3d3d3d;">
+    <li>Each question has a dedicated timer. Once time is up, that question gets locked.</li>
+    <li>Click <b>Show Question</b> to begin answering the question.</li>
+    <li>You can temporarily pause the timer, but it resumes automatically when navigating.</li>
+    <li>Once you select an answer or choose <b>Don't Know</b>, your response is locked.</li>
+    <li>Solutions are visible immediately after answering/skipping.</li>
+    <li>Click <b>Final Submit</b> to save your score and download the scorecard.</li>
+  </ul>
+  <button onclick="hideInstructions()" style="
+    background:#4A90E2;
+    color:white;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:15px;
+    transition: background 0.3s;
+  ">I Understand – Continue</button>
+</div>
+
+<!-- Name Entry Section -->
+<div id="nameSection" style="display:none; text-align:center; margin-top:20px;">
+  <input type="text" id="studentName" placeholder="Enter Your Name" required style="
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    width:250px;
+    text-align:center;
+    font-size:16px;
+    margin-bottom:10px;
+  ">
+  <br>
+  <button class="start-button" onclick="startQuiz()" style="
+    background:#27ae60;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+    margin-top:10px;
+    transition: background 0.3s;
+  ">Start Quiz</button>
+</div>
+
+<style>
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<script>
+  function hideInstructions() {
+    document.getElementById("instructionsBox").style.display = "none";
+    document.getElementById("nameSection").style.display = "block";
+  }
+</script>
+
+
+
+
+  <div id="quizContainer"></div>
+
+  <!-- ✅ Keep this one only -->
+  <div style="margin-top: 20px;">
+    <button class="final-submit-button" onclick="showScore()">Final Submit</button>
+  </div>
+
+  <!-- ✅ Score Section -->
+  <div class="score-section" id="scoreCard"></div>
+
+  <!-- ✅ Hidden buttons until submit -->
+  <div id="afterSubmitBtns" style="margin-top:15px; display:none;">
+  <button id="downloadPdfBtn" class="nav-button">📄 Download Scorecard (PDF)</button>
+  <button id="shareWhatsappBtn" class="nav-button">📲 Share on WhatsApp</button>
+  <button id="printBtn" class="nav-button">🖨 Print All Questions & Solutions</button>
+</div>
+
+
+</div>
+
+  <script>
+    // Password logic
+    const correctPassword = "G10EP";
+    function checkPassword() {
+      const input = document.getElementById("passwordInput").value;
+      const msg = document.getElementById("errorMsg");
+      if (input === correctPassword) {
+        document.getElementById("passwordOverlay").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+      } else {
+        msg.textContent = "Incorrect password. Try again.";
+      }
+    }
+    const quizData = [
+      {
+        url: "",
+        type: "image",
+        correctOption: "C",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 301
+      },
+      {
+        url: "",
+        type: "image",
+        correctOption: "D",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 302
+      },
+      {
+        url: "",
+        type: "image",
+        correctOption: "A",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 303
+      },
+      {
+        url: "",
+        type: "image",
+        correctOption: "B",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 304
+      },
+      {
+        url: "",
+        type: "image",
+        correctOption: "D",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 305
+      },
+	    {
+        url: "",
+        type: "image",
+        correctOption: "D",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 306
+      },
+	    {
+        url: "",
+        type: "image",
+        correctOption: "C",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 307
+      },
+	    {
+        url: "",
+        type: "image",
+        correctOption: "A",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 308
+      },
+	    {
+        url: "",
+        type: "image",
+        correctOption: "A",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 309
+      },
+	    {
+        url: "",
+        type: "image",
+        correctOption: "A",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 310
+      },
+	    {
+        url: "",
+        type: "image",
+        correctOption: "C",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 311
+      },
+	    {
+        url: "",
+        type: "image",
+        correctOption: "A",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 312
+      },
+	    {
+        url: "",
+        type: "image",
+        correctOption: "C",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 313
+      },
+	    {
+        url: "",
+        type: "image",
+        correctOption: "D",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 314
+      },
+     
+      {
+        url: "",
+        type: "image",
+        correctOption: "D",
+        sol: "",
+        videoUrl: "https://www.youtube.com/embed/7pW6a3syzwE",
+        time: 318
+      }
+    ];
+
+    let scores = {}, attempts = {}, timers = {}, timerStates = {};
+    let studentName = "";
+	let quizStartTime = null;
+
+
+    function startQuiz() {
+      const nameInput = document.getElementById("studentName");
+      if (!nameInput.value.trim()) return alert("Please enter your name.");
+      studentName = nameInput.value.trim();
+      nameInput.disabled = true;
+      document.querySelector(".start-button").style.display = "none";
+      quizStartTime = new Date();
+loadQuiz();
+    }
+
+    function loadQuiz() {
+      const container = document.getElementById("quizContainer");
+      quizData.forEach((q, i) => {
+        const qNum = i + 1;
+        const question = document.createElement("div");
+        question.className = "question" + (i === 0 ? " active" : "");
+        question.id = `q${qNum}`;
+        let media = q.type === "image" ? `<img src="${q.url}" />` : `<iframe class="pdf" src="${q.url}" allow="autoplay"></iframe>`;
+        let solMedia = q.sol.includes(".pdf") ? `<iframe class='pdf' src='${q.sol}'></iframe>` : `<img src='${q.sol}' />`;
+        question.innerHTML = `
+          <h3>Q${qNum}:</h3>
+          <div class="question-media" id="media${qNum}">${media}</div>
+          <div class="timer" id="timer${qNum}">⏱ Time left: ${q.time}s</div>
+         <button class="start-button" id="showBtn${qNum}" onclick="startTimer(${qNum}, ${q.time})">Show Question</button>
+
+          <button class="start-button" id="pauseBtn${qNum}" onclick="pauseTimer(${qNum})" style="display: none;">Pause</button>
+
+          <div class="options" id="options${qNum}" style="display: none;">
+            <label><input type="radio" name="q${qNum}" value="A"> A</label>
+            <label><input type="radio" name="q${qNum}" value="B"> B</label>
+            <label><input type="radio" name="q${qNum}" value="C"> C</label>
+            <label><input type="radio" name="q${qNum}" value="D"> D</label>
+          </div>
+          <button class="submit-button" id="submitBtn${qNum}" style="display: none;" onclick="submitAnswer('q${qNum}', '${q.correctOption}', ${qNum})">Submit</button>
+
+<button class="dont-know-button" id="dontKnow${qNum}" onclick="dontKnow(${qNum})" style="display: none;">Don't Know</button>
+
+          <button class="toggle-button" onclick="document.getElementById('sol${qNum}').style.display='block'">Show Solution</button>
+          <div class="solution" id="sol${qNum}">${solMedia}</div>
+		  
+          
+<div class="video" id="vid${qNum}"><iframe width="300" height="170" src="${q.videoUrl}" allowfullscreen></iframe></div>
+	${i !== 0 ? `<button class="nav-button back-button" onclick="navigate(${qNum}, ${qNum - 1})">Back</button>` : ""}
+          ${i < quizData.length - 1 ? `<button class="nav-button" onclick="navigate(${qNum}, ${qNum + 1})">Next</button>` : ""}
+        `;
+        container.appendChild(question);
+        attempts[qNum] = 0;
+        scores[`q${qNum}`] = 0;
+      });
+    }
+function dontKnow(qNum) {
+  // Disable options
+  const options = document.querySelectorAll(`#q${qNum} .options input[type="radio"]`);
+  options.forEach(opt => {
+    opt.disabled = true;
+    opt.parentElement.style.backgroundColor = "#6c757d"; // grey
+    opt.parentElement.style.color = "white";
+  });
+
+  // Hide Submit & Don't Know buttons
+  document.getElementById(`submitBtn${qNum}`).style.display = "none";
+  document.getElementById(`dontKnow${qNum}`).style.display = "none";
+
+  // Show Solution + Video buttons
+  document.querySelector(`#q${qNum} .toggle-button`).style.display = "inline-block";
+  const videoBtn = document.querySelector(`#q${qNum} .toggle-button.video-btn`);
+  if (videoBtn) videoBtn.style.display = "inline-block";
+
+  // 🛑 Force stop ANY timer for this question
+  if (timers[qNum]) {
+    clearInterval(timers[qNum]);
+    delete timers[qNum];
+  }
+
+  // 🛑 Also double-check if multiple timers exist in global scope
+  for (const key in timers) {
+    if (key === qNum.toString()) {
+      clearInterval(timers[key]);
+      delete timers[key];
+    }
+  }
+
+  // 🧭 Update timer display
+  const timerElem = document.getElementById(`timer${qNum}`);
+  if (timerElem) timerElem.textContent = "⏱ Time left: 0s";
+
+  // 🧮 Record time spent
+  if (timerStates[qNum]) {
+    const endTime = Date.now();
+    const timeSpent = Math.round((endTime - timerStates[qNum].startTime) / 1000);
+    timerStates[qNum].timeSpent = timeSpent;
+    timerStates[qNum].remaining = 0;
+    timerStates[qNum].running = false;
+    timerStates[qNum].submitted = true;
+  }
+
+  // ✅ Mark as skipped in scorecard
+  updateScorecard(qNum, "skipped");
+}
+
+
+
+    function startTimer(qNum, duration) {
+      const timerElem = document.getElementById(`timer${qNum}`);
+      const mediaElem = document.getElementById(`media${qNum}`);
+      const optionsElem = document.getElementById(`options${qNum}`);
+      const pauseBtn = document.getElementById(`pauseBtn${qNum}`);
+      optionsElem.style.display = "grid";
+      mediaElem.style.display = "block";
+document.getElementById(`showBtn${qNum}`).style.display = "none";
+document.getElementById(`dontKnow${qNum}`).style.display = "inline-block";
+document.getElementById(`submitBtn${qNum}`).style.display = "inline-block";
+document.getElementById(`pauseBtn${qNum}`).style.display = "inline-block";
+
+
+
+      if (!timerStates[qNum]) timerStates[qNum] = { remaining: duration, running: false };
+      if (timerStates[qNum].remaining === undefined) {
+  timerStates[qNum].remaining = duration;
+}
+
+	  timerStates[qNum].totalDuration = duration;
+		timerStates[qNum].startTime = Date.now();
+      timerStates[qNum].running = true;
+      pauseBtn.textContent = "Pause";
+      pauseBtn.classList.remove("pause-active");
+      timers[qNum] = setInterval(() => {
+        if (timerStates[qNum].remaining > 0 && timerStates[qNum].running) {
+          timerStates[qNum].remaining--;
+          timerElem.textContent = `⏱ Time left: ${timerStates[qNum].remaining}s`;
+        } else if (timerStates[qNum].remaining <= 0) {
+          clearInterval(timers[qNum]);
+          alert("Time's up!");
+        }
+      }, 1000);
+    }
+
+    function pauseTimer(qNum) {
+      const btn = document.getElementById(`pauseBtn${qNum}`);
+      if (!timerStates[qNum]) return;
+      timerStates[qNum].running = !timerStates[qNum].running;
+      btn.textContent = timerStates[qNum].running ? "Pause" : "Resume";
+      btn.classList.toggle("pause-active");
+    }
+
+function submitAnswer(qId, correctOption, qNum) {
+  if (attempts[qNum] >= 1) return alert("You already submitted.");
+  const selected = document.querySelector(`input[name='${qId}']:checked`);
+  if (!selected) return alert("Select an option first.");
+  attempts[qNum]++;
+
+  const options = document.querySelectorAll(`input[name='${qId}']`);
+  options.forEach(opt => {
+    opt.disabled = true;
+    const label = opt.parentElement;
+    label.style.backgroundColor = '#2a2a2a';
+    label.style.color = '#ccc';
+    if (opt.checked) {
+      if (opt.value === correctOption) {
+        scores[qId] = 1;
+        label.style.backgroundColor = "#007BFF";
+        label.style.color = "white";
+      } else {
+        label.style.backgroundColor = "#dc3545";
+        label.style.color = "white";
+      }
+    }
+  });
+
+  // 🛑 STOP the timer
+  if (timerStates[qNum]) {
+    const endTime = Date.now();
+    const timeSpent = Math.round((endTime - timerStates[qNum].startTime) / 1000);
+    timerStates[qNum].timeSpent = timeSpent;
+    timerStates[qNum].running = false;
+    timerStates[qNum].submitted = true;
+    if (timers[qNum]) {
+      clearInterval(timers[qNum]);
+      delete timers[qNum];
+    }
+  }
+
+  // ✅ Hide Don't Know button after submit
+  document.getElementById(`dontKnow${qNum}`).style.display = "none";
+
+  // Show solution + video buttons
+  document.querySelector(`#q${qNum} .toggle-button`).style.display = "inline-block";
+  document.querySelector(`#q${qNum} .toggle-button.video-btn`).style.display = "inline-block";
+}
+
+
+
+function navigate(current, target) {
+  const currEl = document.getElementById(`q${current}`);
+  const targetEl = document.getElementById(`q${target}`);
+  if (!targetEl) return;
+
+  // Pause timer of current question
+  if (timerStates[current]?.running) {
+    timerStates[current].running = false;
+    document.getElementById(`pauseBtn${current}`).textContent = "Resume";
+    document.getElementById(`pauseBtn${current}`).classList.add("pause-active");
+  }
+
+  currEl.classList.remove("active");
+  targetEl.classList.add("active");
+
+  // Auto-resume timer of target question
+if (
+  timerStates[target] &&
+  timerStates[target].remaining > 0 &&
+  !timerStates[target].running &&
+  !timerStates[target].submitted // ✅ only resume if not submitted
+)
+{
+    timerStates[target].running = true;
+    document.getElementById(`pauseBtn${target}`).textContent = "Pause";
+    document.getElementById(`pauseBtn${target}`).classList.remove("pause-active");
+
+    // ✅ Restart countdown for resumed timer
+    // ✅ Clear existing interval if any before starting a new one
+if (timers[target]) clearInterval(timers[target]);
+
+timers[target] = setInterval(() => {
+
+      if (timerStates[target].remaining > 0 && timerStates[target].running) {
+        timerStates[target].remaining--;
+        document.getElementById(`timer${target}`).textContent =
+          `⏱ Time left: ${timerStates[target].remaining}s`;
+      } else if (timerStates[target].remaining <= 0) {
+        clearInterval(timers[target]);
+        alert("Time's up!");
+      }
+    }, 1000);
+  }
+}
+
+
+
+
+async function showScore() {
+  const total = Object.values(scores).reduce((a, b) => a + b, 0);
+  const scoreCard = document.getElementById("scoreCard");
+  const dateStr = new Date().toLocaleDateString();
+  const startTimeStr = quizStartTime ? quizStartTime.toLocaleTimeString() : "N/A";
+  
+  
+  
+  
+  
+  const quizTitle = "RAY OPTIC 2023- 2025";
+
+  
+  
+  
+  scoreCard.innerHTML = `
+    <div id="printWrapper" style="margin: 1; padding: 10px; background: white; font-size: 12px; color: black;">
+      <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width: 100px; height: auto; margin-bottom: 10px;">
+      <h2>G10 EDUCTIONAL PLATFORM (WHATSAPP No. 9706380357)</h2>
+      <h3>Scorecard</h3>
+      <p><strong>Name:</strong> ${studentName}</p>
+      <p><strong>Date:</strong> ${dateStr}</p>
+      <p><strong>Start Time:</strong> ${startTimeStr}</p>
+      <p><strong>Quiz Title:</strong> ${quizTitle}</p>
+
+      <table style="width:100%; border-collapse:collapse;" border="1" cellpadding="6">
+        <thead>
+          <tr style="background:#007BFF; color:white;">
+            <th>Question</th>
+            <th>Status</th>
+            <th>Score</th>
+            <th>Time Spent (s)</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${Object.keys(scores).map((k, i) => `
+            <tr style="page-break-inside: avoid;">
+              <td>Q${i + 1}</td>
+              <td>${scores[k] ? "✔️ Correct" : "❌ Incorrect"}</td>
+              <td>${scores[k]}</td>
+              <td>${timerStates[i + 1]?.timeSpent ?? "N/A"}</td>
+            </tr>`).join("")}
+        </tbody>
+      </table>
+
+      <h4 id="scoreText">⭐ Score: ${total} / ${quizData.length}</h4>
+    </div>
+  `;
+
+  // ✅ Show buttons after final submit
+  document.getElementById("afterSubmitBtns").style.display = "block";
+
+  // PDF download logic
+  document.getElementById("downloadPdfBtn").onclick = async function () {
+    const wrapper = document.getElementById("printWrapper");
+    const imgs = wrapper.querySelectorAll("img");
+    const loadPromises = Array.from(imgs).map(img => img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; }));
+    await Promise.all(loadPromises);
+
+    html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL("image/jpeg", 1.0);
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgHeight = (imgProps.height * pageWidth) / imgProps.width;
+      let y = 0;
+      pdf.addImage(imgData, 'JPEG', 0, y, pageWidth, imgHeight);
+      if (imgHeight > pdf.internal.pageSize.getHeight()) {
+        while (y + pdf.internal.pageSize.getHeight() < imgHeight) {
+          y += pdf.internal.pageSize.getHeight();
+          pdf.addPage();
+          pdf.addImage(imgData, 'JPEG', 0, -y, pageWidth, imgHeight);
+        }
+      }
+      pdf.save(`${studentName}-Scorecard.pdf`);
+    });
+  };
+
+  // WhatsApp Share logic
+  document.getElementById("shareWhatsappBtn").onclick = function () {
+    const whatsappNumber = "916003582005"; // Must include country code
+    const scoreText = document.getElementById('scoreText').innerText;
+
+    let details = "📋 Question-wise Performance:\n";
+    quizData.forEach((q, i) => {
+      const qNum = i + 1;
+      const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+      const userAns = selected ? selected.value : "Not Answered";
+      const correctAns = q.correctOption;
+
+      if (userAns === correctAns) {
+        details += `Q${qNum} → ✅ Correct (Your Ans: ${userAns})\n`;
+      } else if (userAns === "Not Answered") {
+        details += `Q${qNum} → ⏭ Skipped\n`;
+      } else {
+        details += `Q${qNum} → ❌ Wrong (Your Ans: ${userAns} | Correct: ${correctAns})\n`;
+      }
+    });
+
+    const message = `Sir, I have shared my Test Result for checking. Thank you!\n\n` +
+                    `📘 Quiz: ${quizTitle}\n` +
+                    `👤 Student: ${studentName}\n` +
+                    `${scoreText}\n\n${details}`;
+
+    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, "_blank");
+  };
+}
+
+
+
+
+
+async function showScore() {
+  const total = Object.values(scores).reduce((a, b) => a + b, 0);
+  const scoreCard = document.getElementById("scoreCard");
+  const dateStr = new Date().toLocaleDateString();
+  const startTimeStr = quizStartTime ? quizStartTime.toLocaleTimeString() : "N/A";
+  
+  
+  
+  
+  
+  const quizTitle = "RAY OPTIC 2023 TO 2025";
+  
+  
+  
+  
+  
+  
+    disableAllOptions();  // ⛔ Disable all option buttons after final submit
+
+  // ... rest of your existing showScore() code stays EXACTLY SAME ...
+
+  
+  
+  
+  
+
+  scoreCard.innerHTML = `
+    <div id="printWrapper" style="margin: 1; padding: 10px; background: white; font-size: 12px; color: black;">
+      <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width: 100px; height: auto; margin-bottom: 10px;">
+      <h2>G10 EDUCTIONAL PLATFORM</h2>
+      <h3>Scorecard</h3>
+      <p><strong>Name:</strong> ${studentName}</p>
+      <p><strong>Date:</strong> ${dateStr}</p>
+      <p><strong>Start Time:</strong> ${startTimeStr}</p>
+      <p><strong>Quiz Title:</strong> ${quizTitle}</p>
+
+      <table style="width:100%; border-collapse:collapse;" border="1" cellpadding="6">
+        <thead>
+          <tr style="background:#007BFF; color:white;">
+            <th>Question</th>
+            <th>Status</th>
+            <th>Score</th>
+            <th>Time Spent (s)</th>
+          </tr>
+        </thead>
+        <tbody>
+        ${Object.keys(scores).map((k, i) => {
+  const qNum = i + 1;
+  const score = scores[k];
+  const attemptsCount = attempts[qNum] || 0;
+  const wasSubmitted = timerStates[qNum]?.submitted;
+
+  let statusText = "";
+
+  if (wasSubmitted && score === 1) {
+    statusText = "✔️ Correct";
+  } else if (wasSubmitted && score === 0 && attemptsCount > 0) {
+    statusText = "❌ Incorrect";
+  } else if (wasSubmitted && score === 0 && attemptsCount === 0) {
+    statusText = "🤔 I Don't Know";
+  } else {
+    statusText = "⏭️ Not Attempted";
+  }
+
+  return `
+    <tr style="page-break-inside: avoid;">
+      <td>Q${qNum}</td>
+      <td>${statusText}</td>
+      <td>${score}</td>
+      <td>${timerStates[qNum]?.timeSpent ?? "N/A"}</td>
+    </tr>`;
+}).join("")}
+
+
+        </tbody>
+      </table>
+
+      <h4 id="scoreText">⭐ Score: ${total} / ${quizData.length}</h4>
+    </div>
+  `;
+
+  // ✅ Show buttons after final submit
+  document.getElementById("afterSubmitBtns").style.display = "block";
+
+  // 📄 PDF download
+  document.getElementById("downloadPdfBtn").onclick = async function () {
+    const wrapper = document.getElementById("printWrapper");
+    const imgs = wrapper.querySelectorAll("img");
+    const loadPromises = Array.from(imgs).map(img => img.complete ? Promise.resolve() : new Promise(res => { img.onload = img.onerror = res; }));
+    await Promise.all(loadPromises);
+
+    html2canvas(wrapper, { scale: 2, useCORS: true }).then(canvas => {
+      const { jsPDF } = window.jspdf;
+      const pdf = new jsPDF('p', 'mm', 'a4');
+      const imgData = canvas.toDataURL("image/jpeg", 1.0);
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const imgProps = pdf.getImageProperties(imgData);
+      const imgHeight = (imgProps.height * pageWidth) / imgProps.width;
+      let y = 0;
+      pdf.addImage(imgData, 'JPEG', 0, y, pageWidth, imgHeight);
+      if (imgHeight > pdf.internal.pageSize.getHeight()) {
+        while (y + pdf.internal.pageSize.getHeight() < imgHeight) {
+          y += pdf.internal.pageSize.getHeight();
+          pdf.addPage();
+          pdf.addImage(imgData, 'JPEG', 0, -y, pageWidth, imgHeight);
+        }
+      }
+      pdf.save(`${studentName}-Scorecard.pdf`);
+    });
+  };
+
+  // 📲 WhatsApp Share
+  document.getElementById("shareWhatsappBtn").onclick = function () {
+    const whatsappNumber = "916003582005";
+    const scoreText = document.getElementById('scoreText').innerText;
+
+    let details = "📋 Question-wise Performance:\n";
+    quizData.forEach((q, i) => {
+      const qNum = i + 1;
+      const selected = document.querySelector(`input[name="q${qNum}"]:checked`);
+      const userAns = selected ? selected.value : "Not Answered";
+      const correctAns = q.correctOption;
+
+      if (userAns === correctAns) {
+        details += `Q${qNum} → ✅ Correct (Your Ans: ${userAns})\n`;
+      } else if (userAns === "Not Answered") {
+        details += `Q${qNum} → ⏭ Skipped\n`;
+      } else {
+        details += `Q${qNum} → ❌ Wrong (Your Ans: ${userAns} | Correct: ${correctAns})\n`;
+      }
+    });
+
+    const message = `Sir, I have shared my Test Result for checking. Thank you!\n\n` +
+                    `📘 Quiz: ${quizTitle}\n` +
+                    `👤 Student: ${studentName}\n` +
+                    `${scoreText}\n\n${details}`;
+
+    const waUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.open(waUrl, "_blank");
+  };
+}
+
+document.getElementById("printBtn").onclick = function () {
+  const studentName = document.getElementById("studentName").value || "Student";
+
+  // Collect HTML for all questions and solutions
+  let printContent = '';
+  const allQuestions = document.querySelectorAll(".question");
+  allQuestions.forEach(q => {
+    const qClone = q.cloneNode(true);
+
+    // Show solution
+    const sol = qClone.querySelector(".solution");
+    if (sol) sol.style.display = "block";
+
+    // Remove buttons
+    qClone.querySelectorAll("button").forEach(btn => btn.remove());
+
+    // Remove video sections
+    const video = qClone.querySelector(".video");
+    if (video) video.remove();
+
+    printContent += qClone.outerHTML;
+  });
+
+  // Open new window for print
+  const printWindow = window.open('', '', 'width=900,height=700');
+  printWindow.document.write(`
+    <html>
+      <head>
+        <title>Print Quiz</title>
+        <style>
+          @page {
+            margin: 100mm 15mm 100mm 15mm; /* Top Right Bottom Left */
+          }
+          body {
+            font-family: Arial, sans-serif;
+            padding: 10px;
+            background: #fff;
+            color: #000;
+          }
+          .question {
+            border: 1px solid #333;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            background-color: #f5f2f2;
+          }
+          img { max-width: 100%; margin-top: 10px; border: 1px solid #c3c3d4; }
+          table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+          h2 { margin-bottom: 10px; }
+        </style>
+      </head>
+      <body>
+        <div style="text-align:center; margin-bottom: 20px;">
+          <img src="https://i.ibb.co/WNZTWPwv/LOGO-PNG-2025-fab.png" alt="Logo" style="width:120px; height:auto; display:block; margin:10px auto;">
+          <h2 style="margin-top:0;">${studentName}</h2>
+        </div>
+        ${printContent}
+        <div style="height:20px;"></div> <!-- Extra bottom spacing -->
+      </body>
+    </html>
+  `);
+  printWindow.document.close();
+  printWindow.focus();
+  printWindow.print();
+  printWindow.close();
+};
+
+function disableAllOptions() {
+  const allOptions = document.querySelectorAll("input[type='radio']");
+  allOptions.forEach(opt => {
+    opt.disabled = true;
+    opt.parentElement.style.opacity = "0.6";
+    opt.parentElement.style.cursor = "not-allowed";
+  });
+}
+
+
+  </script>
+</body>
+</html>
